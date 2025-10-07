@@ -18,8 +18,8 @@ Run the local server
 npm run dev
 ```
 
-
 ## Usefull commands:
+
 -npm run dev
 -npm run build
 -npm start
