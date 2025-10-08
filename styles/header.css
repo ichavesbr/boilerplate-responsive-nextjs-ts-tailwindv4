@@ -1,0 +1,50 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+
+  height: 100vh;
+  width: 250px;
+
+  backdrop-filter: blur(10px);
+  background-color: rgba(128, 0, 128, 0.2);
+}
+
+.sidebar li {
+  padding: 1rem;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar li:hover {
+  background-color: lightgrey;
+}
+
+.sidebar li:hover a {
+  color: black;
+}
+
+.open-menu-icon {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar-logo {
+    width: 50px;
+  }
+  .hideOnMobile {
+    display: none;
+  }
+  .open-menu-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 100%;
+  }
+}

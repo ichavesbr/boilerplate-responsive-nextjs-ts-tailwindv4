@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 
-// import Header from "../components/Header"
+import Header from "../components/Header"
 // import Footer from "../components/Footer"
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen my-0 mx-auto ">
-        {/* <Header /> */}
+        <Header />
         <main className="flex flex-col flex-1">{children}</main>
         {/* <Footer /> */}
       </body>
