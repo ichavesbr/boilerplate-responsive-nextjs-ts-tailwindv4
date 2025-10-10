@@ -79,8 +79,8 @@ p {
 }
 
 a {
-  color: var(--color-text-2);
-  font-size: var(--font-small);
+  /* color: var(--color-text-2); */
+  /* font-size: var(--font-small); */
 }
 
 a:hover {
