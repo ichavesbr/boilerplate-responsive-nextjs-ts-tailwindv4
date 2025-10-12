@@ -16,7 +16,8 @@ const Header = () => {
   const largeScreen = 1024
 
   const menuLinks = ["link 1", "link 2", "link 3", "link 4", "link 5"]
-  const sidebarLinks = ["SIDEBAR 1", "SIDEBAR 2", "SIDEBAR 3", "SIDEBAR 4", "SIDEBAR 5"]
+  const sidebarLinks = ["link 1", "link 2", "link 3", "link 4", "link 5"]
+  // const sidebarLinks = ["SIDEBAR 1", "SIDEBAR 2", "SIDEBAR 3", "SIDEBAR 4", "SIDEBAR 5"]
 
   // check current screen size and close sidebar in large screen
   useEffect(() => {
@@ -40,20 +41,32 @@ const Header = () => {
                 <FontAwesomeIcon icon={faXmark} />
               </Link>
             </li>
+            <li>
+              <Link href="/" onClick={() => setShowSidebar(false)}>
+                Home
+              </Link>
+            </li>
             {sidebarLinks.map(link => {
               return (
                 <li key={link}>
-                  <Link href="">{link}</Link>
+                  <Link href={link.split(/\s/).join("")} onClick={() => setShowSidebar(false)}>
+                    {link}
+                  </Link>
                 </li>
               )
             })}
           </ul>
 
           <ul className="flex gap-8">
+            <Link href="/" className="hideOnMobile">
+              Home
+            </Link>
             {menuLinks.map(link => {
               return (
                 <li key={link} className="hideOnMobile">
-                  <Link href="">{link}</Link>
+                  {/* split(/\s/) --> isola os caracteres ["a", "b", "c"]*/}
+                  {/* .join("") --> junta tudo abc */}
+                  <Link href={link.split(/\s/).join("")}>{link}</Link>
                 </li>
               )
             })}
