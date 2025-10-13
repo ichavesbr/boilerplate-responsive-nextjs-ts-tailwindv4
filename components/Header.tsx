@@ -60,7 +60,12 @@ const Header = () => {
         <nav>
           <ul className={`sidebar ${showSidebar ? "flex flex-col" : "hidden"}`}>
             <li>
-              <Link onClick={() => setShowSidebar(false)} href="">
+              <Link
+                href=""
+                onClick={e => {
+                  e.preventDefault()
+                  setShowSidebar(false)
+                }}>
                 <FontAwesomeIcon icon={faXmark} />
               </Link>
             </li>
