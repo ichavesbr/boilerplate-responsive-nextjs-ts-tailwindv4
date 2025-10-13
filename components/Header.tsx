@@ -12,8 +12,8 @@ import "../styles/header.css"
 
 const Header = () => {
   // useRef é igual useState, mas ele não causa re-renderização do componente
-  // headerRef é um nome de referência para o elemento header no DOM
-  const headerRef = useRef<HTMLHeadingElement>(null)
+  // mobileNavbarRef é um nome de referência para o elemento nav no DOM
+  const mobileNavbarRef = useRef<HTMLHeadingElement>(null)
 
   const [showSidebar, setShowSidebar] = useState(false)
   const [windowSize, setWindowSize] = useState(0)
@@ -28,10 +28,10 @@ const Header = () => {
   useEffect(() => {
     // MouseEvent é a tipagem para e
     function handleClickOutside(e: MouseEvent) {
-      // existe atualmente um elemento <header>?
-      // algum evento foi disparado em outro lugar  diferente da referencia atual (<header>)?
+      // existe atualmente um elemento <nav>?
+      // algum evento foi disparado em outro lugar diferente da referencia atual (<nav>)?
       // Node é a tipagem para o target
-      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+      if (mobileNavbarRef.current && !mobileNavbarRef.current.contains(e.target as Node)) {
         setShowSidebar(false) // close sidebar
       }
     }
@@ -40,7 +40,7 @@ const Header = () => {
 
     // remove o event listener do resize para evitar memory leaks
     return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [headerRef])
+  }, [mobileNavbarRef])
 
   // check current screen size and close sidebar in large screen
   useEffect(() => {
@@ -54,10 +54,10 @@ const Header = () => {
   }, [windowSize])
 
   return (
-    <header ref={headerRef}>
+    <header>
       <div className="container-md flex items-center justify-between">
         <Image src="/next.svg" width={65} height={65} alt="logo image" className="navbar-logo" />
-        <nav>
+        <nav ref={mobileNavbarRef}>
           <ul className={`sidebar ${showSidebar ? "flex flex-col" : "hidden"}`}>
             <li>
               <Link
