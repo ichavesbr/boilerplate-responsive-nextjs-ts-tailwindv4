@@ -1,3 +1,4 @@
+import Image from "next/image"
 import "../styles/footer.css"
 
 const Footer = () => {
@@ -39,7 +40,7 @@ const Footer = () => {
 
         <div className="company-info">
           <div className="company-icon" aria-hidden="true">
-            &#xf0f7;
+            <Image src="/globe.svg" width={65} height={65} alt="logo image" />
           </div>
           <p className="company-slogan">Inovação em cada detalhe</p>
           <p>Construindo o futuro, hoje</p>

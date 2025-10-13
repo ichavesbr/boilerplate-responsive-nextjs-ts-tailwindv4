@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <header>
       <div className="container-md flex items-center justify-between">
-        <Image src="/logo.jpeg" width={65} height={65} alt="logo image" className="navbar-logo" />
+        <Image src="/next.svg" width={65} height={65} alt="logo image" className="navbar-logo" />
         <nav>
           <ul className={`sidebar ${showSidebar ? "flex flex-col" : "hidden"}`}>
             <li>
