@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
 
-// import GoToTopBtn from "./GoToTopBtn"
+import GoToTopBtn from "./GoToTopBtn"
 import "../styles/header.css"
 
 const Header = () => {
@@ -104,7 +104,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {/* <GoToTopBtn /> */}
+      <GoToTopBtn />
     </header>
   )
 }
