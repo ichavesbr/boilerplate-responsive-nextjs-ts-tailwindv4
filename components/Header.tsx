@@ -66,7 +66,7 @@ const Header = () => {
                   e.preventDefault()
                   setShowSidebar(false)
                 }}>
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon size="xl" icon={faXmark} />
               </Link>
             </li>
             <li>
@@ -99,7 +99,7 @@ const Header = () => {
               )
             })}
             <li className="open-menu-icon" onClick={() => setShowSidebar(true)}>
-              <FontAwesomeIcon icon={faBars} />
+              <FontAwesomeIcon size="xl" icon={faBars} />
             </li>
           </ul>
         </nav>
