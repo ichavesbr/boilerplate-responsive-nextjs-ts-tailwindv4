@@ -1,13 +1,28 @@
 {
+  "compileOnSave": true, // compila ao salvar automaticamente
+
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
+    "target": "esnext", // compila na versão mais recente do EcmaScript (ES).
+    "module": "esnext", // compila cada arquivo como um módulo separado usando sistema de módulos mais recente do ES.
+    "lib": ["esnext", "dom", "dom.iterable"], // permite usar recursos modernos do JS e interagir com o DOM.
+
+    "sourceMap": true, // mostra no browser a linha exata do erro no código do arquivo TS. (gera arquivos .map)
+    "rootDirs": ["./app", "./components"], // pastas onde os TS vai analisar.
+    "skipLibCheck": true, // Não faz verificação em arquivos .d.ts
+
+    "noEmit": true, // não cria arquivos JS ao compilar. (true = não cria, false = cria)
+    "allowJs": true, // permite incluir arquivos JS.
+    "removeComments": false, // mantém os comentários no arquivo JS criado. (true = remove, false = mantém)
+
+    "strict": true, // avisa sobre todos os tipos de erros possíveis no código.
+    "noUnusedLocals": true, // avisa quando há variáveis locais declaradas mas não usadas.
+    "noUnusedParameters": true, // avisa quando há parâmetros de função não usados.
+
+    // daqui pra baixo nao sei direito o que faz. Estudar depois.
     "esModuleInterop": true,
-    "module": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -22,6 +37,7 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"], // apenas verifica nestas pastas.
+  "exclude": ["node_modules"] // não verifica nesta pasta.
 }
